@@ -1,0 +1,36 @@
+{{ define "register" }}
+<!DOCTYPE html>
+<html>
+<head>
+    {{ template "head-meta" . }}
+    <title>Register - Online Boutique</title>
+</head>
+<body>
+    {{ template "header" . }}
+    <div class="container">
+        <h2 class="text-center mt-5">Create a New Account</h2>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="card p-4 mt-3">
+                    <form action="/register" method="POST">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Choose a username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Create a password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p>Already have an account? <a href="/login">Login here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ template "footer" . }}
+</body>
+</html>
+{{ end }}
